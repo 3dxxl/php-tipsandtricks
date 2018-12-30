@@ -1,0 +1,1154 @@
+<!-- Semicolon immer hinter ein Statement -->
+<?php
+
+echo 'Hello Binjam';
+?>
+
+</br>
+
+
+<!-- HTML in ein echo Statement -->
+<?php
+    
+echo '<strong>Hello</strong> Binjam';
+
+?>
+
+</br>
+
+
+<!-- Variablen fangen immer mit einem $ Zeichen an -->
+<!-- Mein einem Punkt kann ich ein weitere Variable ausgeben  .  -->
+
+<?php
+    
+    $Vorwahl = 72;
+    $Name= 'Peter';
+    echo $Vorwahl .' '.$Name;
+
+?>
+
+</br>
+
+
+
+<!-- Konstanten oder Const in PHP sind ähnlich wie variablen, werden aber nicht verändert, diese werden mit der define Funktion erstellt. 
+     define(name, value, case-insensetive)
+-->
+
+<?php
+define("KONSTANTE", "Hallo Welt.");
+echo KONSTANTE; // gibt "Hallo Welt." aus
+echo Konstante; // gibt "Konstante" aus und erzeugt eine Warnung, weil es Kleingeschrieben ist
+
+define("BEGRUESSUNG", "Hallo Du.", true);
+echo BEGRUESSUNG; // gibt "Hallo Du." aus
+echo Begruessung; // gibt "Hallo Du." aus, kein Fehler weil in der define Funktion true geschrieben wurde
+
+?>
+
+
+</br>
+
+
+<!--Eine variable muss entweder in einer Funktion definiert sein oder Sie muss mit der Methode global deklariert sein -->
+    
+    <?php
+  $name = 'David';
+  function getName() {
+    global $name; // Ohne global würde es ein Fehler geben
+      
+    echo $name;
+  }
+  getName();
+
+  //Outputs 'David'
+?>
+
+</br>
+
+    
+<!--Das springen in die naechste Variable -->
+    
+<?php
+  $a = 'hello';
+  $hello = "Hi!";
+  echo $$a;
+
+  // Outputs 'Hi!'
+?>
+
+</br>
+
+
+<!-- Operatoren -->
+
+<?php
+  $num1 = 8;
+  $num2 = 6;
+
+  //Addition
+  echo $num1 + $num2; //14
+
+  //Subtraction
+  echo $num1 - $num2; //2
+
+  //Multiplication
+  echo $num1 * $num2; //48
+
+  //Division
+   echo $num1 / $num2; //1.33333333333
+?>
+
+
+</br>
+
+
+<!-- Modules Operator %  -->
+
+<?php
+  $x = 14;
+  $y = 3;
+  echo $x % $y; // Ergebnis ist 2, also der Rest.
+?>
+
+</br>
+
+
+<!-- Increment und Decremnt 
+$x++; // post-increment 
+$x--; // post-decrement 
+++$x; // pre-increment 
+--$x; // pre-decrement
+-->
+
+<?php
+$a  = 2; $b = $a++; // $a=3,  $b=2, das ist ein post-incement, da der Wert der Variable b bei 2 ist.
+$a  = 2; $b = ++$a; // $a=3,  $b=3, das ist ein pre-incement, da der Wert der Variable b bei zu 3 wird.
+?>
+
+</br>
+
+
+<!-- Vergleichs Operatoren  
+
+$a == $b	Gleich	Gibt TRUE zurück, wenn nach der Typ-Jonglage $a gleich $b ist.
+$a === $b	Identisch	Gibt TRUE zurück, wenn $a gleich $b ist, und beide denselben Typ haben.
+$a != $b	Ungleich	Gibt TRUE zurück, wenn nach der Typ-Jonglage $a nicht gleich $b ist.
+$a <> $b	Ungleich	Gibt TRUE zurück, wenn nach der Typ-Jonglage $a nicht gleich $b ist.
+$a !== $b	Nicht identisch	Gibt TRUE zurück, wenn $a nicht gleich $b ist, oder wenn beide nicht denselben Typ haben.
+$a < $b	Kleiner als	Gibt TRUE zurück, wenn $a kleiner als $b ist.
+$a > $b	Größer als	Gibt TRUE zurück, wenn $a größer als $b ist.
+$a <= $b	Kleiner gleich	Gibt TRUE zurück, wenn $a kleiner oder gleich $b ist.
+$a >= $b	Größer Gleich	Gibt TRUE zurück, wenn $a größer oder gleich $b ist.
+$a <=> $b	Raumschiff	Eine Ganzzahl (integer) kleiner als, gleich oder größer als 0, wenn $a entsprechend kleiner als, gleich oder größer als $b ist. Verfügbar von PHP 7 an.
+
+-->
+
+
+<!-- Logische Operatoren 
+
+$a and $b	Und	TRUE wenn sowohl $a als auch $b TRUE ist.
+$a or $b	Oder	TRUE wenn $a oder $b TRUE ist.
+$a xor $b	Entweder Oder	TRUE wenn entweder $a oder $b TRUE ist, aber nicht beide.
+! $a	Nicht	TRUE wenn $a nicht TRUE ist.
+$a && $b	Und	TRUE wenn sowohl $a als auch $b TRUE ist.
+$a || $b	Oder	TRUE wenn $a oder $b TRUE ist.
+
+-->
+
+<!-- Nummeric Array -->
+
+</br>
+
+<?php
+        
+    $names = array("David", "Amy", "John");
+
+    echo $names[0].$names[1].$names[2];
+
+$myArray[0] = "John";
+$myArray[1] = "<strong>PHP</strong>";
+$myArray[2] = 21;
+
+echo "</br>$myArray[0] is $myArray[2] and knows $myArray[1]";
+
+// Outputs "John is 21 and knows PHP"
+    
+?>
+    
+</br>
+
+<!-- Associative Arrays -->
+
+<?php
+// Verwendung des => Zeichens bei der Wertzuweisung im ersten Beispiel
+$people = array("David"=>"27", "Amy"=>"21", "John"=>"42");
+// zweites Beispiel
+$people['David'] = "27";
+$people['Amy'] = "21";
+$people['John'] = "42";
+
+echo $people['David']; // der Output ist 27
+?>
+
+
+<!-- Multi-Dimensional Arrays -->
+</br>
+
+<?php
+    
+$people = array(
+   'online'=>array('David', 'Amy'),
+   'offline'=>array('John', 'Rob', 'Jack'),
+   'away'=>array('Arthur', 'Daniel')
+);
+
+echo $people['online'][0]; //Outputs "David"
+
+echo $people['away'][1]; //Outputs "Daniel"
+
+
+
+
+?>
+
+</br>
+
+<!-- Kontroll Strukturen -->
+
+<?php
+
+// Das If Else Statement
+
+$x = 10;
+$y = 20;
+if ($x >= $y) {
+   echo $x;
+} else {
+   echo $y;
+}
+
+// Outputs "20"
+?>
+
+</br>
+
+<?php
+
+// Das Elseif Statement
+$age = 21;
+
+if ($age<=13) {
+   echo "Child.";
+} elseif ($age>13 && $age<19) {
+   echo "Teenager";
+} else {
+   echo "Adult";
+}
+
+//Outputs "Adult"
+?>
+
+</br>
+
+<?php
+
+// The while loop
+// Die while-Schleife führt einen Codeblock aus, solange die angegebene Bedingung erfüllt ist.
+// wichtig eine Schleife wird so lange ausgeführt, so lange die Bedingung True ist, erst wenn die 
+// Bedingung false ist geht es weiter zu den nächsten Code Zeilen!!!
+
+$i = 1;
+while ($i < 7) {
+  echo "The value is $i <br />";
+  $i++;
+}
+
+?>
+
+<!-- Do While Loop -->
+</br>
+
+<?php
+
+/*
+Unabhängig davon, ob die Bedingung wahr oder falsch ist, wird der Code mindestens einmal ausgeführt, was in einigen Situationen erforderlich sein könnte.
+*/
+
+$i = 1;
+do {  echo "Hello"; }
+while($i < 0);
+
+
+echo '</br>';
+
+// oder so
+$i = 5;
+do {
+   echo "The number is " . $i . "<br/>";
+   $i++;
+} while($i <= 7);
+
+//Output
+//The number is 5
+//The number is 6
+//The number is 7
+
+
+
+// The for Loop 
+
+/* Im for loop werden die Parameter durch Semikolon getrennt.
+The for loop in the example above first sets the variable $a to 0, 
+then checks for the condition ($a < 6). 
+If the condition is true, it runs the code. After that, it increments $a ($a++).
+*/
+
+for ($a = 0; $a < 6; $a++) 
+
+{    
+   echo "Value of a : ". $a . "<br />";
+}
+
+
+/*
+
+ foreach loop
+ foreach loop funktioniert nur bei Arrays und wird verwendet, um jedes Element in einem Array zu durchlaufen.
+ 
+
+*/
+
+
+$names = array("John", "David", "Amy");
+
+foreach ($names as $name) {
+   echo $name.'<br />';
+}
+
+// John
+// David
+// Amy
+
+
+//  switch Statement
+
+// Die switch-Anweisung ist eine Alternative zur if-elseif-else-Anweisung. 
+// Wenn es eine Übereinstimmung gibt im Case, wird der mit diesem Case verbundene Codeblock ausgeführt.
+// Und mit break wird dieser Case geschlossen und die nächste Case Abfrage startet.
+// default wird ausgefuehrt wenn keiner der Vorherigen Cases übereinstimmt. 
+
+$x=5;
+switch ($x) {
+  case 1:
+    echo "One";
+    break;
+  case 2:
+    echo "Two";
+    break;
+  default:
+    echo "No match";
+}
+
+echo '</br>';
+//Outputs "No match"
+
+
+
+// break statement
+// Beispiel: Eine for Schleife mit einem break statement um den Code Bei einem Wert abzubrechen
+for ($i=0;$i<=50;$i++)  {
+  echo $i;
+  if ($i==5) {
+    
+   break;
+  }
+}
+
+
+
+// continue Statement
+
+
+// Eine for schleife, die alle zahlen von 0 - 15 ausgibt außer bei 10 und 14 wird die ausgabe übersprungen mit continue
+for ($i=0; $i<=15;$i++) {
+  if ($i==10 || $i==14) {
+    continue;
+  }
+  echo $i."<br />";
+}
+
+
+
+// include und requeire statement
+
+/*
+include
+Die include- und require-Anweisungen ermöglichen das Einfügen des Inhalts einer 
+PHP-Datei in eine andere PHP-Datei, bevor der Server sie ausführt.
+Das Einbinden von Dateien spart viel Arbeit. Sie können eine Standardkopf-, 
+Fußzeilen- oder Menüdatei für alle Ihre Webseiten erstellen. Wenn dann der Header 
+aktualisiert werden muss, können Sie nur die Header-Include-Datei aktualisieren.
+
+Dateien werden basierend auf dem Dateipfad eingebunden. 
+Sie können einen absoluten oder relativen Pfad verwenden, 
+um anzugeben, welche Datei aufgenommen werden soll.
+
+
+Angenommen, wir haben eine Standard-Header-Datei namens header.php.
+<?php
+  echo '<h1>Willkommen</h1>';
+?>
+
+Verwenden Sie die Include-Anweisung, um die Header-Datei in eine Seite aufzunehmen.
+<html>
+  <body>
+
+  <?php 
+  include 'header.php'; 
+  ?>
+
+  <p>Einiger Text. </p>
+  <p>Einiger Text. </p>
+  </body>
+</html>
+
+-----------------------
+require
+
+Verwenden Sie require, wenn die Datei für die Ausführung der Anwendung benötigt wird.
+Falls Sie require verwenden und die Datei wird nicht gefunden, dann wird die Anwendung einen Fehler ausgeben!!
+Verwenden Sie include, wenn die Datei nicht benötigt wird. Die Anwendung sollte fortgesetzt 
+werden, auch wenn die Datei nicht gefunden wird.
+
+
+
+
+*/
+
+
+
+// Funktionen
+// Funktionsnamen sind NICHT case-sensitive.
+// Funktionsnamen dürfen nicht mit einer zahl anfangen oder Sonderzeichen wie eine Route etc.  Mögich ist ( _Name, Name, name )
+
+
+
+function sayHello() {
+  echo "Hello!";
+}
+
+sayHello(); //Ruft die Funktion auf
+
+//Outputs "Hello!"
+
+echo '</br>';
+
+// Function Parameters
+
+function multiplyByTwo($number) {
+  $answer = $number * 2;
+  echo $answer;
+}
+multiplyByTwo(3);
+//Outputs
+
+echo '</br>';
+
+// Sie können beliebig viele Argumente oder auch Parameter genannt hinzufügen, solange sie durch Kommas getrennt sind.
+
+function multiply($num1, $num2) {
+  echo $num1 * $num2;
+}
+multiply(3, 6);
+//Outputs 18
+
+
+echo '</br>';
+
+// dfault Argument
+
+function setCounter($num=10) {
+   echo "Counter is ".$num;
+}
+setCounter(42);  //Hier wird der Standartwert/Default Wert überschrieben => Counter is 42
+echo '</br>';
+setCounter();  //Hier wird der Standartwert/Default Wert übernommen => Counter is 10
+
+
+
+
+
+// return statement$_COOKIE
+
+/*
+Eine Funktion kann einen Wert mit der return-Anweisung zurückgeben.
+Return stoppt die Ausführung der Funktion und sendet den Wert an den aufrufenden Code zurück.
+
+*/
+
+echo '</br>';
+
+function mult($num1, $num2) {
+  $res = $num1 * $num2;
+  return $res;
+}
+
+echo mult(8, 3);
+// Outputs 24
+
+
+echo '</br>';
+
+// eine etwas komplexere funcktion
+
+
+function func($arg)  {
+  $result = 0;
+  for($i=0; $i<$arg; $i++) {
+    $result = $result + $i;
+  }
+  return $result;
+}
+echo func(5);  // Output is 10
+
+
+
+echo '</br>';
+
+/*
+Ein Superglobal ist eine vordefinierte Variable, die unabhängig vom Umfang immer zugänglich ist. Sie können über jede Funktion, Klasse oder Datei auf die PHP-Supergobals zugreifen.
+
+Die superglobalen Variablen von PHP sind $_SERVER, $GLOBALS, $_REQUEST, $_POST, $_GET, $_FILES, $_ENV, $_COOKIE, $_SESSION.
+
+$_SERVER
+
+$_SERVER ist ein Array !!, 
+das Informationen wie ÜBERSCHRIFT, PFAD und SKRIPTPOSITION enthält. Die Einträge in diesem Array werden vom Webserver erstellt.
+$_SERVER['SCRIPT_NAME'] gibt den Pfad des aktuellen Skripts zurück:
+
+Unser Beispiel wurde in einer Datei namens somefile.php geschrieben, die sich im Root des Webservers befindet.
+
+<?php
+echo $_SERVER['SCRIPT_NAME'];
+//Outputs "/somefile.php"
+?>
+
+*/
+
+
+
+echo $_SERVER['HTTP_HOST']; //Outputs "localhost" oder hier auf der webseite phpfiddle.org dann => main.xfiddle.com
+
+echo '</br>';
+
+echo $_SERVER['PHP_SELF']; //  gibt den Dateinamen des aktuell ausgeführten Skripts zurück. =>   /code_37281348.php
+
+
+echo '</br>';
+
+echo $_SERVER['SERVER_ADDR']; // gibt die IP Adresse des Host Servers zurück 31.22.4.102
+
+
+echo '</br>';
+
+echo $_SERVER['SCRIPT_NAME']; // Output gibt den Dateinamen des aktuell ausgeführten Skripts zurück. =>   /code_37281348.php
+
+
+echo '</br>';
+
+echo $_SERVER['SCRIPT_FILENAME']; // Output gibt den absoluten PFAD Namen an => /home/xfiddlec/public_html/main/code_11098765.php
+
+
+echo '</br>';
+
+echo $_SERVER['SERVER_PORT']; // Output Gibt den Server Port zurück 80
+
+echo '</br>';
+
+// -------------------------------
+
+/*
+
+Formulare
+
+Der Zweck der PHP-Superglobale $_GET und $_POST ist es, Daten zu sammeln, die in ein Formular eingegeben wurden.
+
+Das Action-Attribut legt fest, dass beim Absenden des Formulars die Daten an eine PHP-Datei namens first.php gesendet werden. 
+HTML-Formularelemente haben Namen, die beim Zugriff auf die Daten mit PHP verwendet werden.
+
+
+Wenn wir nun ein HTML-Formular mit dem auf unsere PHP-Datei gesetzten Action-Attribut haben, 
+können wir mit dem assoziativen 
+Array $_POST 
+auf die veröffentlichten Formulardaten zugreifen. 
+<?php 
+echo $_POST["name"]; 
+?>
+
+echo '</br>';
+
+<?
+php echo $_POST["Alter"]; 
+?>
+
+Die beiden Methoden zum Absenden von Formularen sind GET und POST.
+
+Informationen, die von einem Formular über die POST-Methode gesendet werden, sind für andere unsichtbar, da alle Namen und/oder Werte in den Body der HTTP-Anfrage eingebettet sind. Außerdem gibt es keine Begrenzung der Menge der zu sendenden Informationen.
+Darüber hinaus unterstützt POST erweiterte Funktionen wie die Unterstützung für mehrteilige Binäreingaben beim Hochladen von Dateien auf den Server.
+Es ist jedoch nicht möglich, die Seite mit einem Lesezeichen zu versehen, da die eingegebenen Werte nicht sichtbar sind.
+
+Informationen, die über ein Formular mit der GET-Methode gesendet werden, sind für alle sichtbar (alle Variablennamen und -werte werden in der URL angezeigt). GET setzt auch Grenzen für die Menge der Informationen, die gesendet werden können - etwa 2000 Zeichen.
+Da die Variablen jedoch in der URL angezeigt werden, ist es möglich, die Seite mit einem Lesezeichen zu versehen, was in einigen Situationen nützlich sein kann.
+
+GET sollte NIEMALS zum Versenden von Passwörtern oder anderen vertraulichen Informationen verwendet werden!
+
+Das folgende Beispiel zeigt ein einfaches HTML-Formular, das zwei Eingabefelder und einen Submit-Button enthält:
+
+
+*/
+
+?>
+
+
+<form action="first.php" method="post">
+  <p>Name: <input type="text" name="name" /></p>
+  <p>Age: <input type="text" name="age" /></p>
+  <p><input type="submit" name="submit" value="Submit" /></p>
+</form>
+
+<!-- -------------------------------  -->
+
+<?php
+
+//Die Session Funktion => session_start();
+
+/* In einer Sitzung können Sie Informationen in Variablen speichern, die auf mehreren Seiten verwendet werden können.
+Informationen werden nicht auf dem Computer des Benutzers gespeichert, wie dies bei Cookies der Fall ist.
+Standardmäßig dauern Session-Variablen so lange, bis der Benutzer den Browser schließt.
+*/
+
+// Start the session
+session_start();
+
+$_SESSION['color'] = "red";
+$_SESSION['name'] = "John";
+
+/*
+Nun sind die Variablen für die Farb- und Namenssitzung auf mehreren Seiten und während der gesamten Sitzung zugänglich.
+Die Funktion session_start() muss das allererste in Ihrem Dokument sein. Vor allen HTML-Tags.
+*/
+
+echo $_SESSION ['color']; // output red
+
+echo '</br>';
+
+// --------------------------------
+
+// Cookies
+
+/*
+Häufig werden Cookies verwendet, um den Nutzer zu identifizieren. 
+Ein Cookie ist eine kleine Datei, die der Server auf dem Computer des Benutzers einbindet. 
+Jedes Mal, wenn derselbe Computer eine Seite über einen Browser anfordert, sendet er auch das Cookie. 
+Mit PHP können Sie sowohl Cookie-Werte erstellen als auch abrufen.
+
+Erstellen Sie Cookies mit dem Befehl setcookie():
+setcookie(name, wert, expire, path, domain, secure, httponly);
+
+name: Gibt den Namen des Cookies an.
+Wert: Gibt den Wert des Cookies an.
+verfallen: Gibt (in Sekunden) an, wann das Cookie ablaufen soll. Der Wert: time()+86400*30, setzt das Cookie so, dass es nach 30 Tagen abläuft. Wenn dieser Parameter weggelassen oder auf 0 gesetzt wird, verfällt das Cookie am Ende der Sitzung (wenn der Browser geschlossen wird). Der Standardwert ist 0.
+Pfad: Gibt den Serverpfad des Cookies an. Wenn auf "/" gesetzt, ist das Cookie innerhalb der gesamten Domain verfügbar. Wenn auf "/php/" gesetzt, ist das Cookie nur im php-Verzeichnis und allen Unterverzeichnissen von php verfügbar. Der Standardwert ist das aktuelle Verzeichnis, in dem das Cookie gesetzt wird.
+Domäne: Gibt den Domänennamen des Cookies an. Um das Cookie auf allen Subdomains von example.com verfügbar zu machen, setzen Sie die Domain auf "example.com".
+sicher: Gibt an, ob das Cookie nur über eine sichere HTTPS-Verbindung übertragen werden soll oder nicht. TRUE bedeutet, dass das Cookie nur gesetzt wird, wenn eine sichere Verbindung besteht. Der Standardwert ist FALSE.
+httponly: Wenn auf TRUE gesetzt, ist das Cookie nur über das HTTP-Protokoll zugänglich (das Cookie ist für Skriptsprachen nicht zugänglich). Die Verwendung von httponly hilft, Identitätsdiebstahl durch XSS-Angriffe zu reduzieren. Der Standardwert ist FALSE.
+
+Der Name-Parameter ist der einzige, der benötigt wird. Alle anderen Parameter sind optional.
+
+*/
+
+/*
+
+Das folgende Beispiel erstellt ein Cookie namens "user" mit dem Wert "John". 
+Das Cookie verfällt nach 30 Tagen, was als 86.400 * 30 geschrieben wird, wobei 86.400 Sekunden = ein Tag sind. 
+Das "/" bedeutet, dass das Cookie auf der gesamten Website verfügbar ist.
+
+Wir ermitteln dann den Wert des Cookies "user" (mit der globalen Variable $_COOKIE). 
+Wir verwenden auch die isset() Funktion, um herauszufinden, ob das Cookie gesetzt ist:
+
+*/
+
+$value = "John";
+setcookie("user", $value, time() + (86400 * 30), '/'); 
+
+if(isset($_COOKIE['user'])) {
+  echo "Value is: ". $_COOKIE['user'];
+}
+//Outputs "Value is: John"
+
+
+
+
+
+// ------------------------------------------------------------
+
+// Working with FIles / Arbeiten mit Daten
+// Manipulating Files / Dateien bearbeiten
+
+    
+/*
+
+PHP bietet eine Reihe von Funktionen zum Erstellen, Lesen, Hochladen und Bearbeiten von Dateien.
+Die Funktion fopen() erstellt oder öffnet eine Datei. Wenn Sie fopen() mit einer Datei verwenden, die nicht existiert, wird die Datei erstellt, da die Datei zum Schreiben (w) oder Anhängen (a) geöffnet wurde.
+
+Verwenden Sie einen der folgenden Modi, um die Datei zu öffnen.
+r: Öffnet die Datei nur zum Lesen.
+w: Öffnet die Datei nur zum Schreiben. Löscht den Inhalt der Datei oder erstellt eine neue Datei, wenn sie nicht existiert.
+a: Öffnet die Datei nur zum Schreiben. 
+x: Erstellt eine neue Datei nur zum Schreiben. 
+r+: Öffnet die Datei zum Lesen/Schreiben. 
+w+: Öffnet die Datei zum Lesen/Schreiben. Löscht den Inhalt der Datei oder erstellt eine neue Datei, wenn sie nicht existiert.
+a+: Öffnet die Datei zum Lesen/Schreiben. Erstellt eine neue Datei, wenn die Datei nicht existiert.
+x+: Erstellt eine neue Datei zum Lesen/Schreiben.
+
+Das folgende Beispiel erstellt eine neue Datei, "file.txt", die im gleichen Verzeichnis erstellt wird, in dem sich der PHP-Code befindet.
+$myfile = fopen("file.txt", "w");
+
+Das Symbol \n wird beim Schreiben neuer Zeilen verwendet.
+Die Funktion fclose() schließt eine geöffnete Datei und gibt bei Erfolg TRUE oder FALSE bei einem Fehler zurück.
+*/
+
+
+$myfile = fopen("names.txt", "w");
+
+$txt = "John\n";
+fwrite($myfile, $txt);
+$txt = "David\n";
+fwrite($myfile, $txt);
+
+fclose($myfile);
+
+/* File contains:
+John
+David
+*/
+
+
+
+/*
+
+Anhängen an eine Datei
+
+Wenn Sie Inhalte an eine Datei anhängen möchten, müssen Sie die Datei im Append-Modus öffnen.
+
+Wenn Sie im Modus "a" an eine Datei anhängen, wird der Dateizeiger am Ende der Datei platziert, 
+so dass alle neuen Daten am Ende der Datei hinzugefügt werden.
+
+
+*/
+
+$myFile = "test.txt";
+$fh = fopen($myFile, 'a');
+fwrite($fh, "Etwas Text");
+fclose($fh);
+
+echo '</br>';
+/*
+
+Lesen einer Datei
+
+Die file() Funktion liest die gesamte Datei in ein Array. Jedes Element innerhalb des Arrays entspricht einer Zeile in der Datei:
+
+Dadurch werden alle Zeilen in der Datei gedruckt und durch Kommas getrennt.
+Wir haben die foreach-Schleife verwendet, da die Variable $read ein Array ist.
+
+*/
+$read = file('names.txt');
+foreach ($read as $line) {
+  echo $line .", ";
+}
+
+echo '</br>';
+
+//Ohne das letzte Komma
+/*
+Am Ende der Ausgabe im vorherigen Beispiel hätten wir ein Komma, wie wir es nach jedem Element des Arrays drucken.
+Mit dem folgenden Code können wir vermeiden, dass das letzte Komma gedruckt wird.
+Die Variable $count verwendet die Zählfunktion, um die Anzahl der Elemente im Array $read zu ermitteln.
+Dann, in der ersten Schleife, nach dem Drucken jeder Zeile, bestimmen wir, ob die aktuelle Zeile kleiner 
+als die Gesamtzahl der Zeilen ist, und drucken ein Komma, wenn es das ist. 
+Dadurch wird vermieden, dass das letzte Komma gedruckt wird, da für die letzte Zeile $i gleich $count ist.
+*/
+$read = file('names.txt');
+$count = count($read);
+$i = 1;
+foreach ($read as $line) {
+  echo $line;
+  if($i < $count) {
+    echo ', ';
+  }
+  $i++;
+}
+
+
+
+// Klassen und Objekte
+// OOP => Objektorientiertes Programmieren
+
+/*
+
+In PHP kann eine Klasse Elementvariablen beinhalten, die Eigenschaften zur Definition der Eigenschaften 
+eines Objekts genannt werden, und Funktionen, sogenannte Methoden, zur Definition des Verhaltens eines Objekts. 
+Eine Klassendefinition beginnt mit dem Schlüsselwort class, gefolgt von einem Klassennamen. Geschweifte Klammern 
+umschließen die Definitionen der zur Klasse gehörenden Eigenschaften und Methoden.
+*/
+
+/*
+Der untere Code definiert eine Person-Klasse, die eine Alterseigenschaft und eine speak()-Methode beinhaltet.
+Ein gültiger Klassenname beginnt mit einem Buchstaben oder Unterstrich, gefolgt von einer beliebigen Anzahl von Buchstaben, Zahlen oder Unterstrichen.
+
+Beachten Sie das Schlüsselwort public vor der speak-Methode; es ist ein Sichtbarkeits-Spezifizierer. 
+Das öffentliche Schlüsselwort legt fest, dass auf das Mitglied von überall im Code aus zugegriffen werden kann.
+Es gibt noch andere Schlüsselwörter zur Sichtbarkeit, die wir in späteren Lektionen kennenlernen werden.
+*/
+
+class Person {
+  public $age; //Eigentum
+  public function speak() { //method
+    echo "Hi!";
+  }
+}
+
+echo '</br>';
+
+// Erstellen Sie ein "Hund"-Objekt, das eine Instanz der Klasse "Animal" ist.
+// $Hund = new Animal ();
+
+
+// --------------
+
+/*
+
+$this
+
+$this ist eine Pseudovariable, die eine Referenz auf das aufrufende Objekt ist. Wenn Sie innerhalb einer Methode arbeiten, verwenden Sie $this auf die gleiche Weise, wie Sie einen Objektnamen außerhalb der Klasse verwenden würden.
+
+*/
+
+echo '</br>';
+
+class Dogi {
+  public $legs=4;
+  public function display() {
+    echo $this->legs;
+  }
+}
+$d1 = new Dogi();
+$d1->display(); //4
+
+echo '</br>';
+
+$d2 = new Dogi();
+$d2->legs = 2;
+$d2->display(); //2
+
+
+
+echo '</br>';
+
+/*
+__construct() 
+PHP stellt die Konstruktor-Magiemethode __construct() zur Verfügung, 
+die automatisch aufgerufen wird, wenn ein neues Objekt instanziiert wird. 
+
+*/
+
+class PersonZwei {
+  public function __construct() {
+    echo "Object created";
+  }
+}
+$p = new PersonZwei();
+
+
+/*
+Die __construct()-Methode wird häufig für jede Initialisierung verwendet, die das Objekt vor seiner Verwendung benötigt. 
+Parameter können in __construct() aufgenommen werden, um Werte beim Erstellen des Objekts zu akzeptieren. 
+Zum Beispiel:
+*/
+
+class PersonDrei {
+  public $name;
+  public $age;
+  public function __construct($name, $age) {
+    $this->name = $name;
+    $this->age = $age;
+  }
+}
+
+
+$p = new PersonDrei("David", 42);
+
+
+/*
+Im obigen Code verwendet der Konstruktor Argumente in der neuen Anweisung, um entsprechende Klasseneigenschaften zu initialisieren.
+Sie können nicht mehrere __construct()-Methoden mit unterschiedlicher Anzahl von Parametern schreiben. 
+Unterschiedliches Konstruktorverhalten muss mit Logik innerhalb einer einzigen __construct()-Methode behandelt werden.
+
+*/
+
+echo '</br>';
+
+//-------
+//destruct() 
+// Ähnlich wie beim Klassenkonstruktor gibt es eine Destruktor-Magiemethode 
+// __destruct(), die automatisch aufgerufen wird, wenn ein Objekt zerstört wird.
+
+class PersonView {
+  public function __destruct() {
+    echo "Object destroyed";
+  }
+}
+$p = new PersonView();
+
+echo '</br>';
+
+// Beispiel mit __construct()  & __destruct() 
+
+class TestMe {
+  public function __construct() { echo "2"; }
+  public function __destruct() { echo "1"; }
+}
+$test = new TestMe();
+unset($test);
+
+// Output 21
+
+//------------
+
+echo '</br>';
+
+/*
+Vererbung von PHP-Klassen
+
+Klassen können die Methoden und Eigenschaften einer anderen Klasse erben. Die Klasse, die die Methoden und Eigenschaften erbt, wird als Unterklasse bezeichnet. Die Klasse, von der eine Unterklasse erbt, wird als Elternklasse bezeichnet.
+
+*/
+
+
+class Animal {
+  public $name;
+  public function hi() {
+    echo "Hi from Animal";
+  }
+}
+class Dog extends Animal {
+}
+
+$d = new Dog();
+$d->hi();
+//----------------------------------------
+echo '</br>';
+/*
+PHP Sichtbarkeit
+
+Die Sichtbarkeit steuert, wie und von wo aus auf Eigenschaften und Methoden zugegriffen werden kann.
+Bisher haben wir das public Schlüsselwort verwendet, um anzugeben, dass eine Eigenschaft/Methode von überall zugänglich ist.
+Es gibt noch zwei weitere Schlüsselwörter, um die Sichtbarkeit zu deklarieren:
+protected: Macht Mitglieder nur innerhalb der Klasse selbst zugänglich, durch Vererbung und durch Elternklassen.
+private: Macht Mitglieder nur über die Klasse zugänglich, die sie definiert. 
+
+Klasseneigenschaften müssen immer eine Sichtbarkeitsart haben. Methoden, die ohne explizites Sichtbarkeitsschlüsselwort deklariert wurden, sind als public definiert.
+protected Elemente werden bei der Vererbung verwendet.
+Private Mitglieder werden nur intern in einer Klasse verwendet.
+
+*/
+
+
+//---------------------------------------
+
+// interface
+/*
+Ein Interface gibt eine Liste von Methoden an, die eine Klasse implementieren muss. 
+Das Interface selbst enthält jedoch keine Methodenimplementierungen. 
+Dies ist ein wichtiger Aspekt von Interfaces, da es ermöglicht, dass eine Methode in jeder Klasse, 
+die das Interface verwendet, unterschiedlich behandelt wird.
+
+Das Schlüsselwort interface definiert ein Interface.
+Das Schlüsselwort implements wird in einer Klasse verwendet, 
+um ein Interface zu implementieren.
+
+Beispielsweise wird AnimalInterface mit einer Deklaration für die makeSound()-Funktion definiert, 
+wird aber erst implementiert, wenn es in einer Klasse verwendet wird:
+
+*/
+
+
+interface AnimalInterface {
+  public function makeSound();
+}
+
+class Dogs implements AnimalInterface {
+  public function makeSound() {
+    echo "Woof! <br />";
+  }
+}
+class Cats implements AnimalInterface {
+  public function makeSound() {
+    echo "Meow! <br />";
+  }
+}
+
+$myObj1 = new Dogs();
+$myObj1->makeSound();
+
+$myObj2 = new Cats();
+$myObj2->makeSound();
+
+
+
+echo '</br>';
+
+/*
+//abstract
+Abstrakte Klassen können vererbt werden, aber sie können nicht instanziiert werden. 
+Sie bieten den Vorteil, dass sie sowohl Methoden mit Definitionen als auch abstrakte 
+Methoden enthalten können, die erst bei der Vererbung definiert werden. 
+
+Eine Klasse, die von einer abstrakten Klasse erbt, muss alle abstrakten Methoden implementieren.
+
+Das Schlüsselwort abstract wird verwendet, um eine abstrakte Klasse oder eine abstrakte Methode zu erstellen.
+
+*/
+
+abstract class Fruit { 
+  private $color; 
+    
+  abstract public function eat(); 
+    
+  public function setColor($c) { 
+    $this->color = $c; 
+  } 
+} 
+
+class Apple extends Fruit {
+  public function eat() {
+    echo "Omnomnom";
+  }
+}
+
+$obj = new Apple();
+$obj->eat();
+
+
+echo '</br>';
+
+//------------------
+
+//static
+
+/*
+
+Das statische Schlüsselwort PHP definiert statische Eigenschaften und statische Methoden. 
+Auf eine statische Eigenschaft/Methode einer Klasse kann zugegriffen werden, 
+ohne ein Objekt dieser Klasse zu erzeugen.
+
+Auf eine statische Eigenschaft oder Methode wird mit dem Scope Resolution 
+Operator :: zwischen dem Klassennamen und dem Property/Methodennamen zugegriffen.
+
+*/
+
+class myClass {
+  static $myStaticProperty = 42;
+}
+
+echo myClass::$myStaticProperty;
+
+echo '</br>';
+
+
+//------------
+// self
+/*
+Das Self-Keyword wird benötigt, um von einer statischen Methode in einer 
+Klassendefinition auf eine statische Eigenschaft zuzugreifen.
+
+*/
+class myClassZwei {
+  static $myProperty = 42;
+  static function myMethod() {
+    echo self::$myProperty . ' mit self';
+      
+  }
+}
+
+myClassZwei::myMethod();
+
+
+echo '</br>';
+
+
+
+//------------
+
+
+// final
+
+/*
+Das PHP final Schlüsselwort definiert Methoden, die in Unterklassen nicht überschrieben werden können. 
+Klassen, die final definiert sind, können nicht vererbt werden.
+
+Dieses Beispiel zeigt, dass eine endgültige Methode in einer Unterklasse nicht überschrieben werden kann:
+
+*/
+
+class myClassDrei {
+  final function myFunctionJetzt() {
+    echo "Parent";
+  }
+}
+/* ERROR because a final method cannot be overridden in child classes.
+
+class myClassCool extends myClassDrei {
+  function myFunctionJetzt() {
+    echo "Child";
+  }
+}
+*/
+
+echo '</br>';
+
+
+
+// Der folgende Code zeigt, dass eine endgültige Klasse nicht vererbt werden kann:
+
+/*
+
+class myClassFuenf {
+  final function myFunction() {
+    echo "Parent";
+  }
+}
+// ERROR because a final method cannot be overridden in child classes.
+class myClassNice extends myClassFuenf {
+  function myFunction() {
+    echo "Child";
+  }
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+?>
