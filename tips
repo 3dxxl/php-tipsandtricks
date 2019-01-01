@@ -1152,6 +1152,11 @@ Den Port sehen, den sollte man dann auch nehmen z.b. http://localhost:81/wordpre
 
 */
 
+/*
+
+Das phpmyAdmin passwort findet man auch unter dem Ordner in xamp => phpmyadmin => config.inc.php
+
+*/
 
 
 
