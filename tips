@@ -1165,7 +1165,16 @@ https://www.youtube.com/watch?v=AKR2fiMogQQ
 */
 
 
+/*
+upload size probleme, falls die datei zu groß ist dann kann man in der php.ini Datei die maximal größe anpassen,
+im Ordner xamp => php => php.ini
+von upload_max_filesize=2M
+auf
+z.b. upload_max_filesize=50M
+Das erhöht die upload size auf 50 Megabyte
 
+
+*/
 
 
 
