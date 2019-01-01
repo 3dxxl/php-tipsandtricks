@@ -1173,7 +1173,7 @@ auf
 z.b. upload_max_filesize=50M
 Das erhöht die upload size auf 50 Megabyte
 
-
+Server stoppen und neu starten, damit er die Änderungen annimmt.
 */
 
 
