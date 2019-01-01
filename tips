@@ -1142,6 +1142,15 @@ class myClassNice extends myClassFuenf {
 */
 
 
+/*
+localhost 404 Fehlermeldung.
+Falls die Fehlermeldung kommt, kann man unter xamp => Apache => konfig => httpd.config => Listen 81
+Den Port sehen, den sollte man dann auch nehmen z.b. http://localhost:81/wordpress/testeins/wordpress
+
+
+
+
+*/
 
 
 
